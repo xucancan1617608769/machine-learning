@@ -21,17 +21,17 @@ def plot_decision_regions(model, X, y, resolution=0.02):
     xx1, xx2 = np.meshgrid(np.arange(x1_min, x1_max, resolution),   #生成网络点坐标矩阵
                            np.arange(x2_min, x2_max, resolution))
     
-    print(xx1)
-    print(xx2)
+    #print(xx1)
+    #print(xx2)
     #print("原",X)
     print(np.array([xx1.ravel(), xx2.ravel()]).T)
     
     # np.array([xx1.ravel(), xx2.ravel()])是将x[,0],x[,1]  降维,最后组成一个2×m的数组
     
     Z = model.predict(np.array([xx1.ravel(), xx2.ravel()]).T)
-    print(Z)
+    #print(Z)
     Z = Z.reshape(xx1.shape)
-    print(Z)
+    #print(Z)
     plt.contourf(xx1, xx2, Z, alpha=0.4, cmap=cmap)
     
     
@@ -47,14 +47,7 @@ def plot_decision_regions(model, X, y, resolution=0.02):
         #print(X[y==cl])
         plt.scatter(X[y==cl,0],X[y==cl,1],s=200,c=cmap(idx),marker=markers[idx])
         
-        
-    '''
-    print(np.unique(y))
-    for idx, cl in enumerate(np.unique(y)):
-        plt.scatter(x=X[y == cl, 0], y=X[y == cl, 1],
-                    alpha=0.8, c=cmap(idx),
-                    marker=markers[idx], label=cl)
-    '''
+    
     plt.show()
 
 
