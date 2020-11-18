@@ -1,0 +1,4 @@
+# machine-learning
+perception.py文件是感知机的原始形式的实现代码
+perception_dui.py文件是感知机的对偶形式的实现代码
+plot.py是划感知机的效果图的文件
